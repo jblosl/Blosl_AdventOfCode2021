@@ -5,18 +5,38 @@
 #Initalize varaibles
 lines = []
 
+import numpy as np
+checkedCard = np.zeros([5,5])
 
 #Read in file
-with open('Day04Input.txt') as f:
+with open('Day04/Day04Input.txt') as f:
     lines = f.readlines()
-
+    
 #Extract the call numbers
-callNumbers = lines[1]
+callNumbers = lines[0].split(",")
 print(callNumbers)
 
 #Extract the bingo cards
+bingoCard = lines[2:7]
+print(bingoCard)
+j = 0
+for rowNumbers in range(len(bingoCard)):
+    BingoCardNumbers = bingoCard[rowNumbers].split()
+    print(BingoCardNumbers)
+    #Check each bingo card against the call numbers
+    for nums in range(len(callNumbers)):
+        currentCallNum = callNumbers[nums]
+        for i in range(len(bingoCard)):
+            currentBingoNum = BingoCardNumbers[i]
+            if currentCallNum == currentBingoNum:
+                checkedCard[j,i] = currentBingoNum
+        for 
+        if checkedCard
+        # print(checkedCard)
+    print(j)
+    j += 1   
+print(checkedCard)
 
-#Check each bingo card against the call numbers
 
     #track how many nubers it took and keep only the one that had the least
 

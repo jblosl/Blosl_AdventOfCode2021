@@ -10,7 +10,7 @@ bitHighArray = []
 bitLowCount = bitHighCount = 0
 
 #Read in file
-with open('Day03Input.txt') as f:
+with open('Day03/Day03Input.txt') as f:
     lines = f.readlines()
 
 #Loop through each bit column
