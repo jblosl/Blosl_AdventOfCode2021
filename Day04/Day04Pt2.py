@@ -1,6 +1,6 @@
-#Day04 Code Pt.1
+#Day04 Code Pt.2
 #BINGO there are a set of 5x5 bingo cards that need to be checked and marked as numbers are drawn
-#Determine which BINGO card is going to win first (the least amount of nuumbers called)
+#Determine which BINGO card is going to win last (the most amount of nuumbers called)
 #Once the winner is determined find the score by adding all unmarked numbers and multiply that sum by the last number drawn
 
 import numpy as np
@@ -10,7 +10,7 @@ lines = []
 BINGO = np.array(['!', '!', '!', '!', '!'])
 BINGOcheck = np.array([['!', '!', '!', '!', '!'],['!', '!', '!', '!', '!'],['!', '!', '!', '!', '!'],['!', '!', '!', '!', '!'],['!', '!', '!', '!', '!']])
 bingoCounter = 0
-FirstBingoCount = 200
+FirstBingoCount = 0
 startLine = 2
 endLine = 7
 cardNumber = 1
@@ -46,7 +46,7 @@ while endLine <= len(lines):
             print('Row Bingo')
             print('Bingo Counter:',bingoCounter)
             #See if bingo was achieved faster than any of the previous cards
-            if bingoCounter < FirstBingoCount:
+            if bingoCounter > FirstBingoCount:
                 FirstBingoCount = bingoCounter
                 print(rowArr)
                 print('Current Call Num:', currentCallNum)
@@ -64,7 +64,7 @@ while endLine <= len(lines):
             print('Column Bingo')
             print('Bingo Counter:', bingoCounter)
             #See if bingo was achieved faster than any of the previous cards
-            if bingoCounter < FirstBingoCount:
+            if bingoCounter > FirstBingoCount:
                 FirstBingoCount = bingoCounter
                 print(rowArr)
                 print('Current Call Num:', currentCallNum)
